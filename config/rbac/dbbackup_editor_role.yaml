@@ -1,0 +1,27 @@
+# permissions for end users to edit dbbackups.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: backup-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: dbbackup-editor-role
+rules:
+- apiGroups:
+  - kinda.rocks
+  resources:
+  - dbbackups
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - kinda.rocks
+  resources:
+  - dbbackups/status
+  verbs:
+  - get

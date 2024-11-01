@@ -1,0 +1,23 @@
+# permissions for end users to view dbbackups.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: backup-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: dbbackup-viewer-role
+rules:
+- apiGroups:
+  - kinda.rocks
+  resources:
+  - dbbackups
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - kinda.rocks
+  resources:
+  - dbbackups/status
+  verbs:
+  - get

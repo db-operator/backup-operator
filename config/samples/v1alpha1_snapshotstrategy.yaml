@@ -1,0 +1,9 @@
+apiVersion: kinda.rocks/v1alpha1
+kind: SnapshotStrategy
+metadata:
+  labels:
+    app.kubernetes.io/name: backup-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: snapshotstrategy-sample
+spec:
+  # TODO(user): Add fields here
